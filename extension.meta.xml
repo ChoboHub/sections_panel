@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension id="sections_panel">
+<extension id="sections_panel" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
 	<name>Sections Panel</name>
 	<description>Add sections directly to the dashboard, without having to create a separate datasource, or any datasource at all.</description>
 	<repo type="github">https://github.com/rowan-lewis/sections_panel</repo>
