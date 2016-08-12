@@ -225,8 +225,6 @@
 			$table_head->appendChild($row);
 
 			foreach ($fields as $field) {
-				if (empty($config['columns']) || !in_array($field->get('id'), $config['columns'])) continue;
-
 				$cell = new XMLElement('th');
 				$cell->setValue($field->get('label'));
 				$row->appendChild($cell);
@@ -239,8 +237,6 @@
 				$entry_url = $section_url . 'edit/' . $entry->get('id') . '/';
 
 				foreach ($fields as $position => $field) {
-					if (empty($config['columns']) || !in_array($field->get('id'), $config['columns'])) continue;
-
 					$data = $entry->getData($field->get('id'));
 					$cell = new XMLElement('td');
 					$row->appendChild($cell);
