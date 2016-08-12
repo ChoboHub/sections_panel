@@ -164,7 +164,7 @@
 
 			$input = Widget::Input(
 				'config[entries]',
-				(
+				(string)(
 					isset($config['entries'])
 						? $config['entries']
 						: 5
@@ -225,7 +225,7 @@
 			$table_head->appendChild($row);
 
 			foreach ($fields as $field) {
-				if (!in_array($field->get('id'), $config['columns'])) continue;
+				if (empty($config['columns']) || !in_array($field->get('id'), $config['columns'])) continue;
 
 				$cell = new XMLElement('th');
 				$cell->setValue($field->get('label'));
@@ -239,7 +239,7 @@
 				$entry_url = $section_url . 'edit/' . $entry->get('id') . '/';
 
 				foreach ($fields as $position => $field) {
-					if (!in_array($field->get('id'), $config['columns'])) continue;
+					if (empty($config['columns']) || !in_array($field->get('id'), $config['columns'])) continue;
 
 					$data = $entry->getData($field->get('id'));
 					$cell = new XMLElement('td');
